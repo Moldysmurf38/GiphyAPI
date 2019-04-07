@@ -1,0 +1,26 @@
+body {
+    margin-left: 40px;
+    margin-right: 40px;
+    background: red;
+}
+#container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+    background: black;
+    color: white;
+}
+
+h1 {
+    text-align: center;
+    background: black;
+    color: white;
+    padding-top: 30px;
+    padding-bottom: 40px;
+}
+
+
+.gif-text {
+    margin-top: 20px;
+    font-size: 20px;
+}
