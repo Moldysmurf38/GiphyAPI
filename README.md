@@ -22,9 +22,9 @@ If you wish to use the files locally, clone the repository's master branch onto 
 
 ### **Future Features:**
 
-Cleaner UI
-Area for advanced search options
-Possible profiles for saving favorite gifs
+Cleaner UI <br/>
+Area for advanced search options <br/>
+Possible profiles for saving favorite gifs <br/>
 
 ### **Built With:**
 
