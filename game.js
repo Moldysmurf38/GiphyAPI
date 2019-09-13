@@ -61,8 +61,7 @@ function animeAction() {
                 animeImage.attr("data-still", stillImage);
                 animeImage.attr("data-animate", activeImage);
                 animeImage.attr("data-state", "still");
-                animeImage.attr("class", "anime-gif");
-                animeImage.attr("class", "img-fluid");
+                animeImage.attr("class", "img-fluid anime-gif");
                 var breakPoint = $("<br>")
                 animeDiv.append(titleText);
                 animeDiv.append(ratingText);
