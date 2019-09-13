@@ -33,7 +33,7 @@ renderButtons();
 
 // A function that is run whenever the user clicks one of the anime buttons
 function animeAction() {
-    $("#anime-image").empty()
+    $("#anime-display-block").empty()
     var anime = $(this).attr("data-anime");
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + anime + "&api_key=9wExdf4bs15HbYPozMjltdT1vDPcAenC&limit=15";
     $.ajax({
@@ -42,16 +42,19 @@ function animeAction() {
     }).then(function (response) {
         var results = response.data;
         for (var i = 0; i < results.length; i++) {
-            if (results[i].rating !== "r") {
                 var animeDiv = $("<div>");
+
                 var rating = results[i].rating;
                 var title = results[i].title;
-                var slug = results[i].slug;
-                var source = results[i].source;
                 var ratingText = $("<p>").text("Rating: " + rating);
                 var titleText = $("<p>").text("Title: " + title);
                 var slugText = $("<p>").text("Slug: " + slug)
-                var sourceText = $("<p>").text("Source: " + source)
+
+
+                var sourceText = $("<a>").text("Image Source");
+                sourceText.attr("class", i + "-source-link");
+                $("." + i + "-source-link").attr("href", results[i].source);
+
                 var animeImage = $("<img>");
                 var stillImage = results[i].images.fixed_height_still.url;
                 var activeImage = results[i].images.fixed_height.url;
@@ -61,13 +64,11 @@ function animeAction() {
                 animeImage.attr("data-state", "still");
                 animeImage.attr("class", "anime-gif");
                 animeDiv.append(titleText);
-                animeDiv.append(slugText);
                 animeDiv.append(ratingText);
                 animeDiv.append(sourceText);
                 animeDiv.append(animeImage);
                 animeDiv.attr("class", "gif-text")
-                $("#anime-image").prepend(animeDiv);
-            }
+                $("#anime-display-block").prepend(animeDiv);
         }
         // Function that is run whenever the user clicks on an image
         $(".anime-gif").on("click", function () {
