@@ -6,7 +6,7 @@ function renderButtons() {
     $("#stock-button").empty();
     for (var i = 0; i < animes.length; i++) {
         var animeBtn = $("<button>");
-        animeBtn.addClass("anime-btn");
+        animeBtn.attr("class", "btn btn-danger anime-btn");
         animeBtn.attr("data-anime", animes[i]);
         animeBtn.html(animes[i]);
         $("#stock-button").append(animeBtn);
