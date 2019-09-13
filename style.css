@@ -20,8 +20,22 @@ h1 {
     padding-top: 10px;
     padding-bottom: 40px;
 }
-.anime-btn{
+.anime-btn {
     background: red;
+}
+.anime-btn:hover {
+    color: red;
+    background: white;
+    border: 1px solid red;
+}
+#anime-add {
+    color: red;
+    border: 1px solid red;
+}
+#anime-add:hover {
+    color: white;
+    background: red;
+    border: 1px solid white;
 }
 .gif-text {
     margin-top: 20px;
