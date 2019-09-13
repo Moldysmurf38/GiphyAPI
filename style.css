@@ -3,22 +3,23 @@ body {
     margin-right: 40px;
     background: red;
 }
-#container {
+
+.container {
     padding-top: 40px;
     padding-bottom: 40px;
     text-align: center;
     background: black;
     color: white;
+    min-height: 100vh;
 }
 
 h1 {
     text-align: center;
     background: black;
     color: white;
-    padding-top: 30px;
+    padding-top: 10px;
     padding-bottom: 40px;
 }
-
 
 .gif-text {
     margin-top: 20px;

@@ -48,12 +48,11 @@ function animeAction() {
                 var title = results[i].title;
                 var ratingText = $("<p>").text("Rating: " + rating);
                 var titleText = $("<p>").text("Title: " + title);
-                var slugText = $("<p>").text("Slug: " + slug)
 
-
+                var sourceLink = results[i].source
                 var sourceText = $("<a>").text("Image Source");
                 sourceText.attr("class", i + "-source-link");
-                $("." + i + "-source-link").attr("href", results[i].source);
+                sourceText.attr("href", sourceLink);
 
                 var animeImage = $("<img>");
                 var stillImage = results[i].images.fixed_height_still.url;
@@ -63,12 +62,15 @@ function animeAction() {
                 animeImage.attr("data-animate", activeImage);
                 animeImage.attr("data-state", "still");
                 animeImage.attr("class", "anime-gif");
+                animeImage.attr("class", "img-fluid");
+                var breakPoint = $("<br>")
                 animeDiv.append(titleText);
                 animeDiv.append(ratingText);
                 animeDiv.append(sourceText);
+                animeDiv.append(breakPoint);
                 animeDiv.append(animeImage);
                 animeDiv.attr("class", "gif-text")
-                $("#anime-display-block").prepend(animeDiv);
+                $("#anime-display-block").append(animeDiv);
         }
         // Function that is run whenever the user clicks on an image
         $(".anime-gif").on("click", function () {
